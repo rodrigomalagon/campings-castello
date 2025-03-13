@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="home" data-theme="b">
+            <div data-role="header" data-theme="b">
+                <h1>Camping Sites of Castelló</h1>
+                <div class="ui-btn-right">
+                    <a id="search" data-role="button" data-icon="location">Search by distance</a>
+                    <a id="getAll" data-role="button" data-icon="bullets">Get all</a>
+                </div>
+            </div>
+            <div data-role="content" data-theme="b">
+                <input  type="range" id="radiusDistance" value="20" min="0" max="100">
+                    <p>Search radius (km)</p>
+                </input> <br>
+                <ul id="sitesList" data-role="listview"  data-count-theme="b">
+                <!-- The list is empty at the start -->
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="page" id="details" data-theme="b">
+            <div data-role="header" data-add-back-btn="true" data-theme="b">
+                <h1>Site Details</h1>
+            </div>
+            <div data-role="content" data-theme="b">
+                <h3 id="nameSite"></h4>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">General information</li>
+                   <li><span id="municipality"></span></li>
+                   <li><span id="numPlaces"></span></li>
+               </ul>
+               <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Location</li>
+                    <li><span id="address"></span></li>
+                    <li><span id="lat"></span></li> 
+                    <li><span id="lon"></span></li> 
+               </ul>
+               <span data-role="collapsible" class="ui-nodics-icon ui-alt-icon">
+                    <h2>Contact info</h2>
+                    <ul data-role="listview">
+                        <li><span id="phoneNum"></span></li>
+                        <li><span id="email"></span></li>
+                    </ul>
+            </span>
+            </div>
+        </div>
+        
+        
+    </body>
+    <script src="js/campings.js"></script>
+</html>
